@@ -8,4 +8,7 @@
   <ItemGroup>
     <PackageReference Include="MathNet.Numerics" Version="4.7.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assignment2\" />
+  </ItemGroup>
 </Project>

@@ -6,33 +6,59 @@ namespace COP2210
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
 
-            var balloon = new Balloon("ben balloon", 150);
-            var balloon2 = new Balloon("second balloon", -50);
-
-            Console.WriteLine($"Balloon name: {balloon.getName()}  Height: {balloon.getAltitude()}");
-            Console.WriteLine($"Balloon name: {balloon2.getName()}  Height: {balloon2.getAltitude()}");
+            int assignment = GetUserInput();
 
 
-            balloon.ascendTo(200);
-            balloon2.adjustAltitude(100);
-
-            Console.WriteLine($"Balloon name: {balloon.getName()}  Height: {balloon.getAltitude()}");
-            Console.WriteLine($"Balloon name: {balloon2.getName()}  Height: {balloon2.getAltitude()}");
-
-            balloon.adjustAltitude(-50);
-            balloon2.ascendTo(balloon.getAltitude());
+            switch (assignment)
+            {
+            case (1):
 
 
-            Console.WriteLine($"Balloon name: {balloon.getName()}  Height: {balloon.getAltitude()}");
-            Console.WriteLine($"Balloon name: {balloon2.getName()}  Height: {balloon2.getAltitude()}");
+                break;
 
-            balloon.ascendTo(balloon.getAltitude() * 3);
-            balloon2.ascendTo(balloon2.getAltitude() - 200);
 
-            Console.WriteLine($"Balloon name: {balloon.getName()}  Height: {balloon.getAltitude()}");
-            Console.WriteLine($"Balloon name: {balloon2.getName()}  Height: {balloon2.getAltitude()}");
+
+            case (2):
+                    var balloonManager = new Assignment2.BallonManager();
+
+                    balloonManager.Assignment();
+
+                    break;
+
+
+            case (3):
+
+                break;
+
+            default:
+
+                    Console.WriteLine("You chose an integer that was not valid!");
+
+
+                break;
+            }
+        }
+
+        private static int GetUserInput()
+        {
+            int choice = new int();
+            while (choice <= 0)
+            {
+                Console.WriteLine("Which Assignment Do you want to run?");
+
+                string assignment = Console.ReadLine();
+
+
+                if (!int.TryParse(assignment, out choice))
+                {
+                    Console.WriteLine("You entered an invalid input, please enter an assignment number:  1, 2, 3...");
+                }
+
+            }
+            return choice;
+
+
         }
     }
 }

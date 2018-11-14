@@ -1,5 +1,5 @@
 ﻿using System;
-namespace COP2210
+namespace COP2210.Assignment2
 {
     /**
      * A class to represent a hot-air balloon.  Balloon objects have a name and an
