@@ -5,7 +5,7 @@ namespace COP2210.Assignment2
      * A class to represent a hot-air balloon.  Balloon objects have a name and an
      * altitude.
      */
-    public class Balloon
+    internal class Balloon
     {
         // instance variables
         private String name;            // name of the balloon
@@ -16,7 +16,7 @@ namespace COP2210.Assignment2
          * @param theName the name of the ballon object
          * @param theAltitude the altitude
          */
-        public Balloon(String theName, int theAltitude)
+        internal Balloon(String theName, int theAltitude)
         {
             name = theName;
             // make sure altitude is not negative!
@@ -27,7 +27,7 @@ namespace COP2210.Assignment2
          * Ascend to a particular altitude.
          * @param newAlt the altitude to which to ascend, in meters.
          */
-        public void ascendTo(int newAlt)
+        internal void ascendTo(int newAlt)
         {
             // ascend to new altitude only if it is greater than current altitude, 
 
@@ -41,7 +41,7 @@ namespace COP2210.Assignment2
          * Descend to a particular altitude.
          * @param newAlt the altitude to which to descend, in meters.
          */
-        public void descendTo(int newAlt)
+        internal void descendTo(int newAlt)
         {
             // prevent possible crash into ground
             if (newAlt < 0)         // if desired altitude is below ground level!
@@ -59,7 +59,7 @@ namespace COP2210.Assignment2
          * Modify altitude by a given number of meters, up or down.
          * @param change number of meters to add to current altitude
          */
-        public void adjustAltitude(int change)
+        internal void adjustAltitude(int change)
         {
             // if change is negative (i.e. descending), can't go below 0 altitude
             if (change + altitude < 0)  // change < 0 && abs(change) > altitude
@@ -76,7 +76,7 @@ namespace COP2210.Assignment2
          * Get ballon name.
          * @return the name of the balloon
          */
-        public String getName()
+        internal String getName()
         {
             return name;
         }
@@ -85,7 +85,7 @@ namespace COP2210.Assignment2
          * Get current altitude.
          * @return the altitude of the balloon
          */
-        public int getAltitude()
+        internal int getAltitude()
         {
             return altitude;
         }

@@ -1,9 +1,9 @@
 ﻿using System;
 namespace COP2210.Assignment2
 {
-    public class BallonManager
+    internal class BallonManager
     {
-        public BallonManager()
+        internal BallonManager()
         {
         }
 
