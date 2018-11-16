@@ -21,9 +21,17 @@ namespace COP2210.Assignment3
 
             Console.WriteLine($"Avereage Water Per person: {BottledWaterCalculator.AverageWaterPerPerson()}");
             Console.WriteLine($"Number of Bottles Used: {BottledWaterCalculator.NumberOfBottlesUsed()}");
+            //TODO BEN test these values.. not sure if they are right.
+            //TODO BEN make sure all the steps from the assignment are complete
 
 
+            BottledWaterCalculator.AverageBottleLength = 9.1;
+            BottledWaterCalculator.AverageBottleVolume = 17.2;
+
+            Console.WriteLine($"Average Bottle Length: {BottledWaterCalculator.AverageBottleLength}");
+            Console.WriteLine($"Average Bottle Volume: {BottledWaterCalculator.AverageBottleVolume}");
+            Console.WriteLine($"Avereage Water Per person: {BottledWaterCalculator.AverageWaterPerPerson()}");
+            Console.WriteLine($"Number of Bottles Used: {BottledWaterCalculator.NumberOfBottlesUsed()}");
         }
-        //TEst case goes here.
     }
 }

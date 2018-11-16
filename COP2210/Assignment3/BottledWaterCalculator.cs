@@ -10,7 +10,6 @@ namespace COP2210.Assignment3
             this._CountryPopulation = CountryPopulation;
             this._AverageBottleLength = AverageBottleLength;
             this._AverageBottleVolume = AverageBottleVolume;
-            this._NumberTimesCircleEarth = 24902;  //need to calculate this given the circumference of the earth
         }
         internal BottledWaterCalculator()
         {
@@ -18,10 +17,9 @@ namespace COP2210.Assignment3
 
         private string _CountryName;
         private int _CountryPopulation;
-        private double _NumberTimesCircleEarth;
+        private double _NumberTimesCircleEarth = 190;
         private double _AverageBottleLength;   //  Inches
         private double _AverageBottleVolume;  //Fl ounces
-        private int Circumferences = 190;
         private int CircumferenceOfEarth = 24902;
 
         public string CountryName { 
@@ -89,7 +87,7 @@ namespace COP2210.Assignment3
         {
             double oNumberOfBottles = new double();
 
-            oNumberOfBottles = this._NumberTimesCircleEarth / this._AverageBottleLength;
+            oNumberOfBottles = (_NumberTimesCircleEarth * CircumferenceOfEarth) / this._AverageBottleLength;
 
             return oNumberOfBottles;
         }
