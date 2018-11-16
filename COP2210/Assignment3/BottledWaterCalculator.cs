@@ -1,24 +1,28 @@
 ﻿using System;
 namespace COP2210.Assignment3
 {
-    public class BottledWaterCalculator
+    internal class BottledWaterCalculator
     {
-        public BottledWaterCalculator(string CountryName, int CountryPopulation, double NumberTimesCircleEarth,
+        internal BottledWaterCalculator(string CountryName, int CountryPopulation,
                                       double AverageBottleLength, double AverageBottleVolume)
         {
             this._CountryName = CountryName;
             this._CountryPopulation = CountryPopulation;
             this._AverageBottleLength = AverageBottleLength;
             this._AverageBottleVolume = AverageBottleVolume;
-            this._NumberTimesCircleEarth = NumberTimesCircleEarth;
+            this._NumberTimesCircleEarth = 24902;  //need to calculate this given the circumference of the earth
         }
-
+        internal BottledWaterCalculator()
+        {
+        }
 
         private string _CountryName;
         private int _CountryPopulation;
         private double _NumberTimesCircleEarth;
         private double _AverageBottleLength;   //  Inches
         private double _AverageBottleVolume;  //Fl ounces
+        private int Circumferences = 190;
+        private int CircumferenceOfEarth = 24902;
 
         public string CountryName { 
             get 
@@ -81,21 +85,21 @@ namespace COP2210.Assignment3
         }
 
 
-        internal double NumberOfBottlesUsed(double AverageBottleLength, double NumberTimesCircleEarth)
+        internal double NumberOfBottlesUsed()
         {
-            double NumberOfBottles = new double();
+            double oNumberOfBottles = new double();
 
-            NumberOfBottles = NumberTimesCircleEarth / AverageBottleLength;
+            oNumberOfBottles = this._NumberTimesCircleEarth / this._AverageBottleLength;
 
-            return NumberOfBottles;
+            return oNumberOfBottles;
         }
 
 
         internal double AverageWaterPerPerson()
         {
-            double AverageWaterPerPerson = new double();
-
-            return AverageWaterPerPerson;
+            double oAverageWaterPerPerson = new double();
+            oAverageWaterPerPerson = (this._AverageBottleVolume * NumberOfBottlesUsed()) / this.CountryPopulation;
+            return oAverageWaterPerPerson;
         }
 
     }

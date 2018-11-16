@@ -28,7 +28,8 @@ namespace COP2210
 
 
             case (3):
-
+                    var BottledWaterManager = new Assignment3.BottledWaterManager();
+                    BottledWaterManager.Assignment();
                 break;
 
             default:
