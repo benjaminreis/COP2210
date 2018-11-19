@@ -13,6 +13,20 @@ namespace COP2210.Assignment4
         }
 
 
+        internal int StartTime
+        {
+            get { return _StartTime; }
+            set { _StartTime = value; }
+        }
+
+        internal int EndTime
+        {
+            get { return _EndTime; }
+            set { _EndTime = value; }
+        }
+
+
+
 
 
     }
