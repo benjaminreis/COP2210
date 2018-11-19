@@ -20,7 +20,7 @@ namespace COP2210
 
 
             case (2):
-                    var balloonManager = new Assignment2.BallonManager();
+                    IManager balloonManager = new Assignment2.BallonManager();
 
                     balloonManager.Assignment();
 
@@ -28,15 +28,11 @@ namespace COP2210
 
 
             case (3):
-                    var BottledWaterManager = new Assignment3.BottledWaterManager();
+                    IManager BottledWaterManager = new COP2210.Assignment3.BottledWaterManager();
                     BottledWaterManager.Assignment();
                 break;
                 
             case (4):
-                    var ElapsedTime = new Assignment4.ElapsedTimeCalculator(1500, 1630);
-
-                    var x = ElapsedTime.HourPortionElapsedTime();
-                    var y = ElapsedTime.MinutePortionElapsedTime();
 
                     break;
 

@@ -1,14 +1,14 @@
 ﻿using System;
 namespace COP2210.Assignment3
 {
-    internal class BottledWaterManager
+    internal class BottledWaterManager : IManager
     {
         internal BottledWaterManager()
         {
         }
 
 
-        internal void Assignment()
+        void IManager.Assignment()
         {
             var BottledWaterCalculator = new Assignment3.BottledWaterCalculator("USA", 350000000, 8.5, 16.9);
 

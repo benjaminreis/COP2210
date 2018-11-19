@@ -1,14 +1,14 @@
 ﻿using System;
 namespace COP2210.Assignment2
 {
-    internal class BallonManager
+    internal class BallonManager : IManager
     {
         internal BallonManager()
         {
         }
 
 
-        internal void Assignment()
+        void IManager.Assignment()
         {
             var balloon = new Balloon("ben balloon", 150);
             var balloon2 = new Balloon("second balloon", -50);
