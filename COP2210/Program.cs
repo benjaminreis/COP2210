@@ -31,6 +31,15 @@ namespace COP2210
                     var BottledWaterManager = new Assignment3.BottledWaterManager();
                     BottledWaterManager.Assignment();
                 break;
+                
+            case (4):
+                    var ElapsedTime = new Assignment4.ElapsedTimeCalculator(1500, 1630);
+
+                    var x = ElapsedTime.HourPortionElapsedTime();
+                    var y = ElapsedTime.MinutePortionElapsedTime();
+
+                    break;
+
 
             default:
 
