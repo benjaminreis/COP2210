@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace COP2210.Assignment4
 {
     internal class ElapsedTimeCalculatorManager : IManager
@@ -72,8 +74,16 @@ namespace COP2210.Assignment4
 
          private bool IsTrue(string UserInput)
          {
-                    //TODO BEN implement this to read the boolean response from user.
-            return true;
+            List<string> listTrues = new List<string> { "true", "1", "yes" };
+
+                    if (listTrues.Contains(UserInput)
+                    {
+                return true;
+                    }
+            else
+                    {
+                return false;
+                    }
          }
 
 
