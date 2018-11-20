@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace COP2210.Assignment4
 {
@@ -60,7 +61,7 @@ namespace COP2210.Assignment4
 
             if (elapsedTimeCalculator == null)
             {
-                elapsedTimeCalculator = new ElapsedTimeCalculator(int.Parse(StartTimeString), int.Parse(EndTimeString))
+                elapsedTimeCalculator = new ElapsedTimeCalculator(int.Parse(StartTimeString), int.Parse(EndTimeString));
             }
             else
             {
@@ -74,17 +75,10 @@ namespace COP2210.Assignment4
 
          private bool IsTrue(string UserInput)
          {
-            List<string> listTrues = new List<string> { "true", "1", "yes" };
+            List<string> listTrues = new List<string> { "true", "1", "yes", "ja", "y" };
 
-                    if (listTrues.Contains(UserInput)
-                    {
-                return true;
-                    }
-            else
-                    {
-                return false;
-                    }
-         }
+            return listTrues.Contains(UserInput, StringComparer.OrdinalIgnoreCase) ? true : false;
+        }
 
 
 
