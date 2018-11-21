@@ -10,12 +10,8 @@ namespace COP2210.Assignment4
         {
         }
 
-         void IManager.Assignment()
+        void IManager.Assignment()
         {
-            //TODO BEN put test cases here...
-
-
-
 
             bool KeepAsking = true;
 
@@ -36,13 +32,15 @@ namespace COP2210.Assignment4
 
                 }
 
-
-
             }
 
             while (KeepAsking);
 
         }
+
+
+        #region "Private Methods"
+
 
         private Assignment4.ElapsedTimeCalculator GetUserInput(ElapsedTimeCalculator elapsedTimeCalculator)
         {
@@ -60,8 +58,8 @@ namespace COP2210.Assignment4
             }
             else
             {
-                elapsedTimeCalculator.EndTime = int.Parse(StartTimeString);
-                elapsedTimeCalculator.StartTime = int.Parse(EndTimeString);
+                elapsedTimeCalculator.StartTime = int.Parse(StartTimeString);
+                elapsedTimeCalculator.EndTime = int.Parse(EndTimeString);
             }
 
             return elapsedTimeCalculator;
@@ -74,17 +72,17 @@ namespace COP2210.Assignment4
             Console.WriteLine($"Elapsed Time Minute Portion: {elapsedTimeCalculator.MinutePortionElapsedTime()}");
 
             Console.WriteLine($"Total Elapsed Time Minutes: {elapsedTimeCalculator.TotalElapsedTimeMinutes()}");
-            Console.WriteLine($"Total Elapsed Time Minutes: {elapsedTimeCalculator.TotalElapsedTimeSeconds()}");
+            Console.WriteLine($"Total Elapsed Time Seconds: {elapsedTimeCalculator.TotalElapsedTimeSeconds()}");
         }
 
         private bool IsTrue(string UserInput)
-         {
+        {
             List<string> listTrues = new List<string> { "true", "1", "yes", "ja", "y" };
 
             return listTrues.Contains(UserInput, StringComparer.OrdinalIgnoreCase) ? true : false;
         }
 
-
-
     }
+
+#endregion
 }

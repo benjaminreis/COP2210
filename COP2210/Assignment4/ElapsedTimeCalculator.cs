@@ -5,10 +5,9 @@ namespace COP2210.Assignment4
     {
         private int _StartTime;
         private int _EndTime;
-        //private DateTime _EndDateTime;
         private TimeSpan _ElapsedTime;
         private const int HOURMINSECCONVERSION = 60;
-        private const int DAYHOURCONVERSION = 24;
+       // private const int DAYHOURCONVERSION = 24;
 
         internal ElapsedTimeCalculator(int StartTime, int EndTime)
         {
