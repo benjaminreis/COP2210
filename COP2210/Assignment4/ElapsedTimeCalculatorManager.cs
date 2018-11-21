@@ -16,20 +16,16 @@ namespace COP2210.Assignment4
 
 
 
-            //var ElapsedTime = new Assignment4.ElapsedTimeCalculator(1500, 1630);
 
-            //var x = ElapsedTime.HourPortionElapsedTime();
-            //var y = ElapsedTime.MinutePortionElapsedTime();
-
-            //var t = ElapsedTime.TotalElapsedTimeMinutes();
-            //var u = ElapsedTime.TotalElapsedTimeSeconds();
             bool KeepAsking = true;
 
             ElapsedTimeCalculator elapsedTimeCalculator = null;
 
             do
             {
-                GetUserInput(elapsedTimeCalculator);
+                elapsedTimeCalculator = GetUserInput(elapsedTimeCalculator);
+
+                DisplayResults(elapsedTimeCalculator);
 
                 Console.WriteLine("Do you want to update the End Times and Start Time?  (y/n?)");
                 var UpdateRespone = Console.ReadLine();
@@ -72,7 +68,16 @@ namespace COP2210.Assignment4
 
         }
 
-         private bool IsTrue(string UserInput)
+        private void DisplayResults(Assignment4.ElapsedTimeCalculator elapsedTimeCalculator)
+        {
+            Console.WriteLine($"Elapsed Time Hour Portion: {elapsedTimeCalculator.HourPortionElapsedTime()}");
+            Console.WriteLine($"Elapsed Time Minute Portion: {elapsedTimeCalculator.MinutePortionElapsedTime()}");
+
+            Console.WriteLine($"Total Elapsed Time Minutes: {elapsedTimeCalculator.TotalElapsedTimeMinutes()}");
+            Console.WriteLine($"Total Elapsed Time Minutes: {elapsedTimeCalculator.TotalElapsedTimeSeconds()}");
+        }
+
+        private bool IsTrue(string UserInput)
          {
             List<string> listTrues = new List<string> { "true", "1", "yes", "ja", "y" };
 

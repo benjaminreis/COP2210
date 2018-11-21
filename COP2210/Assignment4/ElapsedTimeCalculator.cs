@@ -5,7 +5,7 @@ namespace COP2210.Assignment4
     {
         private int _StartTime;
         private int _EndTime;
-        private DateTime _EndDateTime;
+        //private DateTime _EndDateTime;
         private TimeSpan _ElapsedTime;
         private const int HOURMINSECCONVERSION = 60;
         private const int DAYHOURCONVERSION = 24;
@@ -15,7 +15,9 @@ namespace COP2210.Assignment4
             this._EndTime = EndTime;
             this._StartTime = StartTime;
             //CalculateInputsDateTime();
+            CalculateInputsDateTime();
             CalculateElapsedTime();
+
         }
 
         internal ElapsedTimeCalculator() { }
@@ -28,7 +30,9 @@ namespace COP2210.Assignment4
             set 
             {
                 _StartTime = value;
+                CalculateInputsDateTime();
                 CalculateElapsedTime();
+
             }
         }
 
@@ -38,7 +42,9 @@ namespace COP2210.Assignment4
             set 
             { 
                 _EndTime = value;
+                CalculateInputsDateTime();
                 CalculateElapsedTime();
+
             }
         }
 
@@ -48,7 +54,7 @@ namespace COP2210.Assignment4
         private void CalculateInputsDateTime()
         {
            this.StartDateTime = DateTime.ParseExact(this._StartTime.ToString(), "HHmm", System.Globalization.CultureInfo.CurrentCulture);
-            this._EndDateTime = DateTime.ParseExact(this._EndTime.ToString(), "HHmm", System.Globalization.CultureInfo.CurrentCulture);
+            this.EndDateTime = DateTime.ParseExact(this._EndTime.ToString(), "HHmm", System.Globalization.CultureInfo.CurrentCulture);
 
         }
 
@@ -84,7 +90,7 @@ namespace COP2210.Assignment4
 
         internal void CalculateElapsedTime()
         {
-            var elapsed = this._EndDateTime - this.StartDateTime;
+            var elapsed = this.EndDateTime - this.StartDateTime;
 
             this._ElapsedTime = elapsed;
 

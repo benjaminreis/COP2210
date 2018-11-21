@@ -33,7 +33,8 @@ namespace COP2210
                 break;
                 
             case (4):
-
+                    IManager ElapsedTimeCalculatorManager = new COP2210.Assignment4.ElapsedTimeCalculatorManager();
+                    ElapsedTimeCalculatorManager.Assignment();
                     break;
 
 
