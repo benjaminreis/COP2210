@@ -32,13 +32,12 @@ namespace COP2210.Assignment4
                 GetUserInput(elapsedTimeCalculator);
 
                 Console.WriteLine("Do you want to update the End Times and Start Time?  (y/n?)");
-                var UpdateRespone = Console.ReadLine(); 
+                var UpdateRespone = Console.ReadLine();
 
-               if (!bool.TryParse(UpdateRespone, out KeepAsking)
+                if (!IsTrue(UpdateRespone))
                 {
                     KeepAsking = true;
 
-                    //TODO BEN implement "ISTrue" from below, right now it onky validated for 1's and 0's
                 }
 
 
