@@ -14,7 +14,7 @@ namespace COP2210.Assignment5
 
 
         internal string SalesPersonsName;
-        internal decimal TotalMonthlySales;
+        internal double TotalMonthlySales;
         internal int YearsService;
         internal string Rank;  //“1” = Apprentice, “2” = Junior and “3” = Senior.
 
@@ -25,11 +25,77 @@ namespace COP2210.Assignment5
             return "";
         }
 
-        internal double computerCommission()
+        internal double computeCommission()
         {
-            return 0.0;
+            return computeSalesCommission() + computeRankIncentive() + computeRetentionCommission();
         }
 
+        private double computeRankIncentive()
+        {
+            var rankPercentage = 0.0;
+            switch (this.Rank.ToLower())
+            {
+                case "junior":
+                    rankPercentage = .001;
+                    break;
 
+                case "senior":
+                    rankPercentage = .002;
+                    break;
+                default:
+                    break;
+            }
+
+            return TotalMonthlySales * rankPercentage;
+        }
+
+        private double computeRetentionCommission()
+        {
+            double rententionPercentage = this.YearsService > 10 ? .01 : (this.YearsService / 100);
+            return this.TotalMonthlySales * rententionPercentage;
+        }
+
+        private double computeSalesCommission()
+        {
+            var salesAmount = this.TotalMonthlySales;
+            var commissionAmount = 0.0;
+
+            if (salesAmount <= 100000.0)
+            {
+                return commissionAmount;
+            } 
+            else if (salesAmount <= 200000.0)
+            {
+                commissionAmount = commissionAmount + (CalcSaleslevel(100000.0, 200000.0, salesAmount) * .01);
+            }
+            else if (salesAmount <= 300000.0)
+            {
+                commissionAmount = commissionAmount + (CalcSaleslevel(200000.0, 300000.0, salesAmount) * .015);
+            }
+            else if (salesAmount <= 400000.0)
+            {
+                commissionAmount = commissionAmount + (CalcSaleslevel(300000.0, 400000.0, salesAmount) * .0175);
+            }
+            else 
+            {
+                commissionAmount = commissionAmount + (salesAmount - 400000.0) * .02;
+            }
+
+
+
+            return commissionAmount;
+        }
+
+        private double CalcSaleslevel(double floor, double ceiling, double TotalSales)
+        {
+            var calcCommision = 0.0;
+            if (TotalSales > floor)
+            {
+                calcCommision = TotalSales - ceiling;
+            }
+            calcCommision = calcCommision - floor;
+
+            return calcCommision;
+        }
     }
 }
