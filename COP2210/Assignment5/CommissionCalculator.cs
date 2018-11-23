@@ -21,8 +21,11 @@ namespace COP2210.Assignment5
         internal string getData()
         {
 
-
-            return "";
+            string outPut = "Employee: " + SalesPersonsName
+                + $"%nTotal Monthly Sales: {TotalMonthlySales:C}"
+                + $"\n\nRank: {Rank}"
+                + $"\n\nYears of Service:  {YearsService}";
+            return outPut;
         }
 
         internal double computeCommission()
