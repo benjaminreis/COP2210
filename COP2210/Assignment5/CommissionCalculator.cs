@@ -18,7 +18,7 @@ namespace COP2210.Assignment5
         internal int YearsService;
         internal string Rank;  //“1” = Apprentice, “2” = Junior and “3” = Senior.
 
-        internal string getData()
+        internal string GetData()
         {
 
             string outPut = "Employee: " + SalesPersonsName
@@ -28,12 +28,12 @@ namespace COP2210.Assignment5
             return outPut;
         }
 
-        internal double computeCommission()
+        internal double ComputeCommission()
         {
             return computeSalesCommission() + computeRankIncentive() + computeRetentionCommission();
         }
 
-        private double computeRankIncentive()
+        private double ComputeRankIncentive()
         {
             var rankPercentage = 0.0;
             switch (this.Rank.ToLower())
@@ -52,13 +52,13 @@ namespace COP2210.Assignment5
             return TotalMonthlySales * rankPercentage;
         }
 
-        private double computeRetentionCommission()
+        private double ComputeRetentionCommission()
         {
             double rententionPercentage = this.YearsService > 10 ? .01 : (this.YearsService / 100);
             return this.TotalMonthlySales * rententionPercentage;
         }
 
-        private double computeSalesCommission()
+        private double ComputeSalesCommission()
         {
             var salesAmount = this.TotalMonthlySales;
             var commissionAmount = 0.0;
