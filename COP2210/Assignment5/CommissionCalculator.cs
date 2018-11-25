@@ -3,7 +3,7 @@ namespace COP2210.Assignment5
 {
     internal class CommissionCalculator
     {
-        internal CommissionCalculator(string SalesPersonsName, decimal TotalMonthlySales, int YearsService, string Rank)
+        internal CommissionCalculator(string SalesPersonsName, double TotalMonthlySales, int YearsService, int Rank)
         {
             this.SalesPersonsName = SalesPersonsName;
             this.TotalMonthlySales = TotalMonthlySales;
@@ -16,7 +16,7 @@ namespace COP2210.Assignment5
         internal string SalesPersonsName;
         internal double TotalMonthlySales;
         internal int YearsService;
-        internal string Rank;  //“1” = Apprentice, “2” = Junior and “3” = Senior.
+        internal int Rank;  //“1” = Apprentice, “2” = Junior and “3” = Senior.
 
         internal string GetData()
         {
@@ -30,19 +30,19 @@ namespace COP2210.Assignment5
 
         internal double ComputeCommission()
         {
-            return computeSalesCommission() + computeRankIncentive() + computeRetentionCommission();
+            return ComputeSalesCommission() + ComputeRankIncentive() + ComputeRetentionCommission();
         }
 
         private double ComputeRankIncentive()
         {
             var rankPercentage = 0.0;
-            switch (this.Rank.ToLower())
+            switch (this.Rank)
             {
-                case "junior":
+                case 1:
                     rankPercentage = .001;
                     break;
 
-                case "senior":
+                case 2:
                     rankPercentage = .002;
                     break;
                 default:

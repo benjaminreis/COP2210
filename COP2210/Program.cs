@@ -37,7 +37,10 @@ namespace COP2210
                     ElapsedTimeCalculatorManager.Assignment();
                     break;
 
-
+                case (5):
+                    IManager CommissionCalculatorManager = new COP2210.Assignment5.CommissionCalculatorManager();
+                    CommissionCalculatorManager.Assignment();
+                    break;
             default:
 
                     Console.WriteLine("You chose an integer that was not valid!");
