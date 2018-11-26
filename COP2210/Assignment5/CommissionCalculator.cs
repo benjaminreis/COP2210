@@ -26,6 +26,9 @@ namespace COP2210.Assignment5
                 + $"\n\nRank: {Rank}"
                 + $"\n\nYears of Service:  {YearsService}";
             return outPut;
+
+            //TODO BEN need to display the commission for the month.
+            //TODO BEN need to convert rank from integer to string.  (case statement, enum would be great, but case would be fine)
         }
 
         internal double ComputeCommission()

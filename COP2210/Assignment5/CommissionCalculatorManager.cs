@@ -14,7 +14,8 @@ namespace COP2210.Assignment5
 
             var tempCommission = commissionCalculator.ComputeCommission();
 
-            commissionCalculator.GetData();
+            var tempData = commissionCalculator.GetData();
+            Console.Write(commissionCalculator.GetData());
 
         }
 
