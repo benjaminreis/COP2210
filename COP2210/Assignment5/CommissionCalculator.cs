@@ -28,14 +28,13 @@ namespace COP2210.Assignment5
                 + $"\n\nTotal Commission:  {ComputeCommission():C}\n";
             return outPut;
 
-            //TODO BEN need to display the commission for the month.
             //TODO BEN need to convert rank from integer to string.  (case statement, enum would be great, but case would be fine)
         }
 
         internal double ComputeCommission()
         {
-            double temp = ComputeSalesCommission() + ComputeRankIncentive() + ComputeRetentionCommission();
-            return temp;
+            double TotalComission = ComputeSalesCommission() + ComputeRankIncentive() + ComputeRetentionCommission();
+            return TotalComission;
         }
 
         private double ComputeRankIncentive()
