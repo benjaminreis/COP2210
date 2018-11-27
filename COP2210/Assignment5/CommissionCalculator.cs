@@ -22,9 +22,10 @@ namespace COP2210.Assignment5
         {
 
             string outPut = "Employee: " + SalesPersonsName
-                + $"%nTotal Monthly Sales: {TotalMonthlySales:C}"
+                + $"\nTotal Monthly Sales: {TotalMonthlySales:C}"
                 + $"\n\nRank: {Rank}"
-                + $"\n\nYears of Service:  {YearsService}";
+                + $"\n\nYears of Service:  {YearsService}"
+                + $"\n\nTotal Commission:  {ComputeCommission():C}\n";
             return outPut;
 
             //TODO BEN need to display the commission for the month.
@@ -33,19 +34,20 @@ namespace COP2210.Assignment5
 
         internal double ComputeCommission()
         {
-            return ComputeSalesCommission() + ComputeRankIncentive() + ComputeRetentionCommission();
+            double temp = ComputeSalesCommission() + ComputeRankIncentive() + ComputeRetentionCommission();
+            return temp;
         }
 
         private double ComputeRankIncentive()
         {
-            var rankPercentage = 0.0;
+            double rankPercentage = 0.0;
             switch (this.Rank)
             {
-                case 1:
+                case 2:
                     rankPercentage = .001;
                     break;
 
-                case 2:
+                case 3:
                     rankPercentage = .002;
                     break;
                 default:
@@ -57,7 +59,17 @@ namespace COP2210.Assignment5
 
         private double ComputeRetentionCommission()
         {
-            double rententionPercentage = this.YearsService > 10 ? .01 : (this.YearsService / 100);
+            double rententionPercentage = 0.0;
+
+            if (this.YearsService > 10)
+            {
+                rententionPercentage = .01;
+            }
+            else if (this.YearsService > 0)
+            {
+                rententionPercentage =  this.YearsService / 100.0;  //this is getting set to 0, maybe because its a double divided by int?
+            }
+
             return this.TotalMonthlySales * rententionPercentage;
         }
 
@@ -94,7 +106,7 @@ namespace COP2210.Assignment5
 
         private double CalcSaleslevel(double floor, double ceiling, double TotalSales)
         {
-            var calcCommision = 0.0;
+            double calcCommision = 0.0;
             if (TotalSales > floor)
             {
                 calcCommision = TotalSales - ceiling;
