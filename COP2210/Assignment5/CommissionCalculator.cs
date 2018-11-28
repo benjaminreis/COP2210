@@ -30,7 +30,6 @@ namespace COP2210.Assignment5
                 + $"\n\nTotal Commission:  {this.TotalCommission:C}\n";
             return outPut;
 
-            //TODO BEN need to convert rank from integer to string.  (case statement, enum would be great, but case would be fine)
         }
 
         internal double ComputeCommission()
