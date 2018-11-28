@@ -12,7 +12,7 @@ namespace COP2210.Assignment5
 
             CommissionCalculator commissionCalculator = GetUserInput();
 
-            var tempCommission = commissionCalculator.ComputeCommission();
+            var tempCommission = commissionCalculator.TotalCommission;
 
             var tempData = commissionCalculator.GetData();
             Console.Write(commissionCalculator.GetData());

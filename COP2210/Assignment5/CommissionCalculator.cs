@@ -9,6 +9,7 @@ namespace COP2210.Assignment5
             this.TotalMonthlySales = TotalMonthlySales;
             this.YearsService = YearsService;
             this.Rank = Rank;
+            this.TotalCommission = ComputeCommission();
 
         }
 
@@ -17,15 +18,16 @@ namespace COP2210.Assignment5
         internal double TotalMonthlySales;
         internal int YearsService;
         internal int Rank;  //“1” = Apprentice, “2” = Junior and “3” = Senior.
+        internal double TotalCommission;
 
         internal string GetData()
         {
 
             string outPut = "Employee: " + SalesPersonsName
                 + $"\nTotal Monthly Sales: {TotalMonthlySales:C}"
-                + $"\n\nRank: {Rank}"
+                + $"\n\nRank: {GetRank(Rank)}"
                 + $"\n\nYears of Service:  {YearsService}"
-                + $"\n\nTotal Commission:  {ComputeCommission():C}\n";
+                + $"\n\nTotal Commission:  {this.TotalCommission:C}\n";
             return outPut;
 
             //TODO BEN need to convert rank from integer to string.  (case statement, enum would be great, but case would be fine)
@@ -113,6 +115,21 @@ namespace COP2210.Assignment5
             calcCommision = calcCommision - floor;
 
             return calcCommision;
+        }
+
+        private string GetRank(int rank)
+        {
+            switch(rank)
+            {
+                case (1):
+                    return "Apprentice";
+                case (2):
+                    return "Junior";
+                case (3):
+                    return "Senior";
+                default:
+                    return "Rank not defined";
+            }
         }
     }
 }
