@@ -31,6 +31,17 @@ namespace COP2210.Assignment6
             return this.SideCLength;
         }
 
+        internal string TriangleType()
+        {
+            return "equilateral, isosceles, etc";
+        }
+
+
+        internal double Area()
+        {
+            return 0.0;
+        }
+
         #endregion
 
 
