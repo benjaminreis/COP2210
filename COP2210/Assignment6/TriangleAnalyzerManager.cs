@@ -46,7 +46,7 @@ namespace COP2210.Assignment6
             return SideLength;
         }
 
-#region
+#endregion
 
     }
 }
