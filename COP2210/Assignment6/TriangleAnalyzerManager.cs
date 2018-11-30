@@ -16,8 +16,14 @@ namespace COP2210.Assignment6
             int SideCLength = GetSideLength("C");
 
             TriangleAnalyzer triangleAnalyzer = new TriangleAnalyzer(SideALength, SideBLength, SideCLength);
-            //TODO BEN print results.
 
+            Console.Write($"Side A length: {triangleAnalyzer.SideA()}\n");
+            Console.Write($"Side B length: {triangleAnalyzer.SideB()}\n");
+            Console.Write($"Side C length: {triangleAnalyzer.SideC()}\n");
+            string TriangleSuccessMessage = triangleAnalyzer.IsTriangle() ? "Yes!  This is a triangle" : "Nope! Not a Triangle";
+            Console.WriteLine(TriangleSuccessMessage + "\n");
+            Console.Write($"Triangle Type: {triangleAnalyzer.GetTriangleType()}\n");
+            Console.Write($"Triangle Area: {triangleAnalyzer.GetArea()}");
 
         }
 
@@ -42,7 +48,7 @@ namespace COP2210.Assignment6
                 }
 
 
-            } while (SideLength > 0);
+            } while (SideLength < 1);
             return SideLength;
         }
 

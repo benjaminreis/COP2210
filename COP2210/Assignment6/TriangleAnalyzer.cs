@@ -31,9 +31,14 @@ namespace COP2210.Assignment6
             return this.SideCLength;
         }
 
-        internal string TriangleType()
+        internal string GetTriangleType()
         {
-            string TriangleType = "";
+            string TriangleType = string.Empty;
+            if (!IsTriangle())
+            {
+                return "Not a Triangle";
+            }
+
             if (IsEquilateral())
             {
                 return "Equilateral";
@@ -58,20 +63,34 @@ namespace COP2210.Assignment6
                 TriangleType = "Isocelese " + TriangleType;
             }
 
-
-
-            return "equilateral, isosceles, etc";
+            return TriangleType;
         }
 
 
-        internal double ComputeArea(int Side1, int Side2, int Side3)
+        internal double GetArea()
         {
+            int Side1 = this.SideALength;
+            int Side2 = this.SideBLength;
+            int Side3 = this.SideCLength;
             int perimeter = Side1 + Side2 + Side3;
             double s = perimeter / 2.0;
 
             var radicand = s * (s - Side1) * (s - Side2) * (s - Side3);
 
+            if (radicand <= 0)
+            {
+                return 0.0;
+            }
             return Math.Sqrt(radicand);
+        }
+
+        internal bool IsTriangle()
+        {
+            int Side1 = this.SideALength;
+            int Side2 = this.SideBLength;
+            int Side3 = this.SideCLength;
+
+            return ((Side1 + Side2) >= Side3) && ((Side3 + Side1) >= Side2) && ((Side2 + Side3) >= Side1);
         }
 
         #endregion
@@ -134,10 +153,10 @@ namespace COP2210.Assignment6
 
         private int SumSquaresTwoSide(int Side1, int Side2)
         {
-            int returnValue = 0;
+            int returnValue = new int();
 
 
-            returnValue = (Side1 * Side1) + (Side2 + Side2);
+            returnValue = (Side1 * Side1) + (Side2 * Side2);
 
 
             return returnValue;

@@ -41,6 +41,10 @@ namespace COP2210
                     IManager CommissionCalculatorManager = new COP2210.Assignment5.CommissionCalculatorManager();
                     CommissionCalculatorManager.Assignment();
                     break;
+                case (6):
+                    IManager TriangleAnalyzerManager = new COP2210.Assignment6.TriangleAnalyzerManager();
+                    TriangleAnalyzerManager.Assignment();
+                    break;
             default:
 
                     Console.WriteLine("You chose an integer that was not valid!");
