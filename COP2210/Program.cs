@@ -59,7 +59,7 @@ namespace COP2210
             int choice = new int();
             while (choice <= 0)
             {
-                Console.WriteLine("Which Assignment Do you want to run?");
+                Console.WriteLine("Which Assignment Do you want to run? 1, 2, 3, 4, 5, 6..");
 
                 string assignment = Console.ReadLine();
 
