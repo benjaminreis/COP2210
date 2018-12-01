@@ -10,9 +10,9 @@ namespace COP2210.Assignment6
             this.SideCLength = SideCLength;
         }
 
-        private int SideALength;
-        private int SideBLength;
-        private int SideCLength;
+        private readonly int SideALength;
+        private readonly int SideBLength;
+        private readonly int SideCLength;
 
 
 
