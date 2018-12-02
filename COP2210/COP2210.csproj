@@ -14,5 +14,6 @@
     <Folder Include="Assignment4\" />
     <Folder Include="Assignment5\" />
     <Folder Include="Assignment6\" />
+    <Folder Include="Assignment8\" />
   </ItemGroup>
 </Project>

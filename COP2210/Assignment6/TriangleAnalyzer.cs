@@ -18,15 +18,15 @@ namespace COP2210.Assignment6
 
         #region "Internal Methods"
 
-        internal int SideA()
+        internal int sideA()
         {
             return this.SideALength;
         }
-        internal int SideB()
+        internal int sideB()
         {
             return this.SideBLength;
         }
-        internal int SideC()
+        internal int sideC()
         {
             return this.SideCLength;
         }
