@@ -31,24 +31,24 @@ namespace COP2210.Assignment6
             return this.SideCLength;
         }
 
-        internal string GetTriangleType()
+        internal string getTriangleType()
         {
             string TriangleType = string.Empty;
-            if (!IsTriangle())
+            if (!isTriangle())
             {
                 return "Not a Triangle";
             }
 
-            if (IsEquilateral())
+            if (isEquilateral())
             {
                 return "Equilateral";
             }
 
-            if (IsRight())
+            if (isRight())
             {
                 TriangleType = "Right";
             }
-            else if (IsObtuse())
+            else if (isObtuse())
             {
                 TriangleType = "Obtuse";
             }
@@ -58,7 +58,7 @@ namespace COP2210.Assignment6
             }
 
 
-            if (IsIsosceles())
+            if (isIsosceles())
             {
                 TriangleType = "Isocelese " + TriangleType;
             }
@@ -67,7 +67,7 @@ namespace COP2210.Assignment6
         }
 
 
-        internal double GetArea()
+        internal double getArea()
         {
             int Side1 = this.SideALength;
             int Side2 = this.SideBLength;
@@ -84,7 +84,7 @@ namespace COP2210.Assignment6
             return Math.Sqrt(radicand);
         }
 
-        internal bool IsTriangle()
+        internal bool isTriangle()
         {
             int Side1 = this.SideALength;
             int Side2 = this.SideBLength;
@@ -99,7 +99,7 @@ namespace COP2210.Assignment6
 
         #region "Private Methods"
 
-        private bool IsEquilateral()
+        private bool isEquilateral()
         {
             if (this.SideALength == this.SideBLength && this.SideCLength == this.SideBLength && this.SideALength == this.SideCLength)
             {
@@ -108,7 +108,7 @@ namespace COP2210.Assignment6
             return false;
         }
 
-        private bool IsIsosceles()
+        private bool isIsosceles()
         {
             if ((this.SideALength == this.SideBLength && this.SideALength != this.SideCLength)
                 || (this.SideBLength == this.SideCLength && this.SideCLength != this.SideALength)
@@ -119,13 +119,13 @@ namespace COP2210.Assignment6
             return false;
         }
 
-        private bool IsRight()
+        private bool isRight()
         {
             //I think that it doesnt matter the the first two that are passed int... 
             // that it just matters that the 3rd param has each side
-            if (SquareSidesEqualThird(SideALength, SideBLength, SideCLength) 
-                || SquareSidesEqualThird(SideBLength, SideALength, SideCLength) 
-                || SquareSidesEqualThird(SideCLength, SideBLength, SideALength))               
+            if (squareSidesEqualThird(SideALength, SideBLength, SideCLength) 
+                || squareSidesEqualThird(SideBLength, SideALength, SideCLength) 
+                || squareSidesEqualThird(SideCLength, SideBLength, SideALength))               
             {
                 return true;
             }
@@ -133,11 +133,11 @@ namespace COP2210.Assignment6
             return false;
         }
 
-        private bool IsObtuse()
+        private bool isObtuse()
         {
-            if((SumSquaresTwoSide(this.SideALength, this.SideBLength) < (this.SideCLength * this.SideCLength))
-               || (SumSquaresTwoSide(this.SideALength, this.SideCLength) < (this.SideBLength * this.SideBLength))
-              || (SumSquaresTwoSide(this.SideCLength, this.SideBLength) < (this.SideALength * this.SideALength)))
+            if((sumSquaresTwoSide(this.SideALength, this.SideBLength) < (this.SideCLength * this.SideCLength))
+               || (sumSquaresTwoSide(this.SideALength, this.SideCLength) < (this.SideBLength * this.SideBLength))
+              || (sumSquaresTwoSide(this.SideCLength, this.SideBLength) < (this.SideALength * this.SideALength)))
             {
                 return true;
             }
@@ -146,12 +146,12 @@ namespace COP2210.Assignment6
         }
 
 
-        private bool SquareSidesEqualThird(int Side1, int Side2, int Side3)
+        private bool squareSidesEqualThird(int Side1, int Side2, int Side3)
         {
-            return SumSquaresTwoSide(Side1, Side2) == Side3 * Side3 ? true : false;
+            return sumSquaresTwoSide(Side1, Side2) == Side3 * Side3 ? true : false;
         }
 
-        private int SumSquaresTwoSide(int Side1, int Side2)
+        private int sumSquaresTwoSide(int Side1, int Side2)
         {
             int returnValue = new int();
 

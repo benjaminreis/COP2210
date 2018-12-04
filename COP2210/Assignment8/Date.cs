@@ -379,6 +379,7 @@ namespace COP2210.Assignment8
                     break;
                 default:
                     sReturn += "th, ";
+                    break;
             }
             return sReturn + year;       // concatenate year and return
         }
