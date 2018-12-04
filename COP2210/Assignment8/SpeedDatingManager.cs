@@ -10,7 +10,30 @@ namespace COP2210.Assignment8
         void IManager.Assignment()
         {
 
+            var speedDater = new Assignment8.SpeedDating();
 
+
+        }
+
+
+        private int GetYear()
+        {
+            int Year = 0;
+            do
+            {
+
+                Console.WriteLine($"Enter a year:  (in form of a number 4 digit number NNNN)");
+
+                string sYear = Console.ReadLine();
+
+                if (!int.TryParse(sYear, out Year))
+                {
+                    Console.WriteLine("Check your format, enter an integer;  1924, 1967, 1984, 2012... etc.");
+                }
+
+            } while (Year > 0);
+
+            return Year;
         }
     }
 }
