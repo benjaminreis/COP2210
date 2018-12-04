@@ -12,6 +12,8 @@ namespace COP2210.Assignment8
 
             var speedDater = new Assignment8.SpeedDating();
 
+            speedDater.auldLangSynch(GetYear());
+
 
         }
 

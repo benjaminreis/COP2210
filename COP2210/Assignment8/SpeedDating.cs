@@ -6,7 +6,7 @@ namespace COP2210.Assignment8
      * A class to give students experience using loops.  This class
      * creates and manipulates objects of Greg's Date class.
      */
-    public class SpeedDating
+    internal class SpeedDating
     {
         // Note: this class has no instance variables!
 
