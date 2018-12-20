@@ -25,10 +25,6 @@ namespace COP2210.Assignment8
          */
         public void auldLangSynch(int theYear)
         {
-            // TO DO: write body of this method here
-            //print the day of the week ("Sunday", "Monday", etc.) 
-            //on which New Year’s Day will fall for each of 10 consecutive years, 
-            //beginning with the input year
             for (int i = theYear; i < theYear + 10; i++)
             {
                 var Date = new COP2210.Assignment8.Date(1, 1, i);
@@ -36,9 +32,7 @@ namespace COP2210.Assignment8
 
                 Console.Write($"{i.ToString()}: {dayOfWeek}\n");
             }
-
-
-        }
+         }
 
         /**
          * Computes and returns the Date on which Election Day will fall 
@@ -53,6 +47,13 @@ namespace COP2210.Assignment8
         public Date pollDancer(int year)
         {
             // TO DO: write body of method here
+
+            //Election Day is fixed by law as the first Tuesday after the first Monday in November. 
+            //Have the user enter another year, call the pollDancer method, 
+            //and print the Date object returned, properly labeled. 
+            //Print the Date in your main method, not in pollDancer
+
+
 
             // bogus return value so class skeleton will compile and execute
             return null;
