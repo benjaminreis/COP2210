@@ -26,6 +26,17 @@ namespace COP2210.Assignment8
         public void auldLangSynch(int theYear)
         {
             // TO DO: write body of this method here
+            //print the day of the week ("Sunday", "Monday", etc.) 
+            //on which New Year’s Day will fall for each of 10 consecutive years, 
+            //beginning with the input year
+            for (int i = theYear; i < theYear + 10; i++)
+            {
+                var Date = new COP2210.Assignment8.Date(1, 1, i);
+                var dayOfWeek = Date.getDayOfWeek();
+
+                Console.Write($"{i.ToString()}: {dayOfWeek}\n");
+            }
+
 
         }
 
