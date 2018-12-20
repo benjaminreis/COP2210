@@ -45,6 +45,10 @@ namespace COP2210
                     IManager TriangleAnalyzerManager = new COP2210.Assignment6.TriangleAnalyzerManager();
                     TriangleAnalyzerManager.Assignment();
                     break;
+                case (8):
+                    IManager SpeedDatingManager = new COP2210.Assignment8.SpeedDatingManager();
+                    SpeedDatingManager.Assignment();
+                    break;
             default:
 
                     Console.WriteLine("You chose an integer that was not valid!");

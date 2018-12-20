@@ -33,7 +33,7 @@ namespace COP2210.Assignment8
                     Console.WriteLine("Check your format, enter an integer;  1924, 1967, 1984, 2012... etc.");
                 }
 
-            } while (Year > 0);
+            } while (Year < 0);
 
             return Year;
         }
