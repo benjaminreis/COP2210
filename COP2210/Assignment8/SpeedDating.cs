@@ -53,7 +53,8 @@ namespace COP2210.Assignment8
             //and print the Date object returned, properly labeled. 
             //Print the Date in your main method, not in pollDancer
 
-
+            //TODO BEN idea:  call the date function and pass the year and the month until you find first monday in november?
+            //THis is less that efficient
 
             // bogus return value so class skeleton will compile and execute
             return null;
