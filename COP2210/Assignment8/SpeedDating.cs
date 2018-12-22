@@ -46,18 +46,27 @@ namespace COP2210.Assignment8
          */
         public Date pollDancer(int year)
         {
-            // TO DO: write body of method here
-
-            //Election Day is fixed by law as the first Tuesday after the first Monday in November. 
-            //Have the user enter another year, call the pollDancer method, 
-            //and print the Date object returned, properly labeled. 
-            //Print the Date in your main method, not in pollDancer
 
             //TODO BEN idea:  call the date function and pass the year and the month until you find first monday in november?
             //THis is less that efficient
 
-            // bogus return value so class skeleton will compile and execute
-            return null;
+            var dayOfMonth = 1;
+            var IsElectionDay = false;
+            while (!IsElectionDay)
+            {
+                var tempDate = new Date(11, dayOfMonth, year);
+                if (tempDate.getDayOfWeek() != "Tuesday")
+                {
+                    dayOfMonth++;
+
+                }
+                else
+                {
+                    IsElectionDay = true;
+                    return tempDate;
+                }
+            }
+                   return new Date(1, 1, 1582);
         }
 
         /**

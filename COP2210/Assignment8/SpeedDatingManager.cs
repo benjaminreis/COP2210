@@ -14,6 +14,9 @@ namespace COP2210.Assignment8
 
             speedDater.auldLangSynch(GetYear());
 
+            var ElectionDate = speedDater.pollDancer(GetYear());
+
+            Console.Write($"Election day for {ElectionDate.getYear()} is day: {ElectionDate.getDay()} of the month:  {ElectionDate.getMonth()}");
 
         }
 
