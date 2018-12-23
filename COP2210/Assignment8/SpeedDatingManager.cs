@@ -23,11 +23,28 @@ namespace COP2210.Assignment8
 
         internal void Construction()
         {
+
+            var StartDate = GetDate("Start");
+            var EndDate = GetDate("End");
+
+
+
             //1.  Call a method to get start date (year, day, month)
             //2.  Call a method to get estimated Completion Date.
             //3.  Check dates to make sure start date is before completion date.  (re-ask if there are issues)
             //4.  Call GetHalfwayDate to find the date halfway.
             //5.  Log the halfwaydate in the Construction Method
+        }
+
+        private Date GetDate(string StartEnd)
+        {
+            Console.WriteLine($"Please Enter the {StartEnd} Date:");
+            var nYear = GetYear();
+            var nMonth = GetMonth();
+            var nDay = GetDay(nYear, nMonth);
+
+            return new Date(nMonth, nDay, nYear);
+
         }
 
         private int GetYear()
@@ -50,6 +67,111 @@ namespace COP2210.Assignment8
             return Year;
         }
 
+        private int GetMonth()
+        {
+            int nMonth = 0;
+            do
+            {
+
+                Console.WriteLine($"Enter a Month:  (in form of a number 1 = january, 7 = July, 11 = November, etc)");
+
+                string sYear = Console.ReadLine();
+
+                if (!int.TryParse(sYear, out nMonth))
+                {
+                    Console.WriteLine("Check your format, enter an integer;  1, 2, 3, 5, 8, etc..");
+                }
+
+            } while (nMonth < 0);
+
+            return nMonth;
+        }
+
+        private int GetDay(int nYear, int nMonth)
+        {
+            int nDay = 0;
+
+            do
+            {
+                Console.WriteLine($"Enter a Day:  (in form of a number 1, 2, .. 30");
+
+                string sYear = Console.ReadLine();
+
+                if (!int.TryParse(sYear, out nMonth))
+                {
+                    Console.WriteLine("Check your format, enter an integer;  1, 2, 3, 5, 8, etc..");
+                }
+                else
+                {
+                    if (!ValidateMonthDay(nYear, nMonth, nDay))
+                    {
+                        Console.WriteLine("Date not valid for the given Year and Month, enter another.");
+                        nDay = -1;
+                    }
+
+                }
+
+
+
+            } while (nDay < 0);
+
+            return nDay;
+
+        }
+
+        private bool ValidateMonthDay(int nYear, int nMonth, int nDay)
+        {
+            bool IsValid = false;
+
+            switch (nMonth)
+            {
+                case 2:
+
+                    int FebMaxDays = IsLeapYear(nYear) ? 29 : 28;
+                    if (nDay <= FebMaxDays && nDay > 0)
+                        return true;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    if (nDay <= 30 && nDay > 0)
+                        return true;
+                    break;
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    if (nDay <= 31 && nDay > 0)
+                        return true;
+                    break;
+
+             }
+
+            return IsValid;
+        }
+
+        private bool IsLeapYear(int Year)
+        {
+            if (Year % 100 == 0 && Year % 400 == 0)
+            {
+                return true;
+            }
+
+            if (Year % 100 == 0)
+            {
+                return false;  //IF its divisible by 100 but not divisible by 400, its not a leap year
+
+            }
+            if (Year % 4 == 0)
+            {
+                return true;
+            }
+            return false;
+        }
 
     }
 }
