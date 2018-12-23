@@ -44,12 +44,8 @@ namespace COP2210.Assignment8
          * @param year the year for which to compute the date of Election Day
          * @return the Date of Election Day for the specified year
          */
-        public Date pollDancer(int year)
+        internal Date pollDancer(int year)
         {
-
-            //TODO BEN idea:  call the date function and pass the year and the month until you find first monday in november?
-            //THis is less that efficient
-
             var dayOfMonth = 1;
             var IsElectionDay = false;
             while (!IsElectionDay)
