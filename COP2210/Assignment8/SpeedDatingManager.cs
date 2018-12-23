@@ -18,14 +18,23 @@ namespace COP2210.Assignment8
 
             Console.Write($"Election day for {ElectionDate.getYear()} is day: {ElectionDate.getDay()} of the month:  {ElectionDate.getMonth()}");
 
+
+            Construction();
         }
 
 
         internal void Construction()
         {
-
             var StartDate = GetDate("Start");
             var EndDate = GetDate("End");
+
+            
+            var speedDater = new Assignment8.SpeedDating();
+
+            var HalfwayDate = speedDater.getHalfwayDate(StartDate, EndDate);
+
+
+            Console.Write($"The Halway Date is:  {HalfwayDate.getMonth()}/{HalfwayDate.getDay()}/{HalfwayDate.getYear()}");
 
 
 
@@ -35,6 +44,8 @@ namespace COP2210.Assignment8
             //4.  Call GetHalfwayDate to find the date halfway.
             //5.  Log the halfwaydate in the Construction Method
         }
+
+
 
         private Date GetDate(string StartEnd)
         {
@@ -97,7 +108,7 @@ namespace COP2210.Assignment8
 
                 string sYear = Console.ReadLine();
 
-                if (!int.TryParse(sYear, out nMonth))
+                if (!int.TryParse(sYear, out nDay))
                 {
                     Console.WriteLine("Check your format, enter an integer;  1, 2, 3, 5, 8, etc..");
                 }
@@ -121,13 +132,14 @@ namespace COP2210.Assignment8
 
         private bool ValidateMonthDay(int nYear, int nMonth, int nDay)
         {
+            var speedDater = new Assignment8.SpeedDating();
             bool IsValid = false;
 
             switch (nMonth)
             {
                 case 2:
 
-                    int FebMaxDays = IsLeapYear(nYear) ? 29 : 28;
+                    int FebMaxDays = speedDater.IsLeapYear(nYear) ? 29 : 28;
                     if (nDay <= FebMaxDays && nDay > 0)
                         return true;
                     break;
@@ -154,24 +166,9 @@ namespace COP2210.Assignment8
             return IsValid;
         }
 
-        private bool IsLeapYear(int Year)
-        {
-            if (Year % 100 == 0 && Year % 400 == 0)
-            {
-                return true;
-            }
 
-            if (Year % 100 == 0)
-            {
-                return false;  //IF its divisible by 100 but not divisible by 400, its not a leap year
 
-            }
-            if (Year % 4 == 0)
-            {
-                return true;
-            }
-            return false;
-        }
+
 
     }
 }
