@@ -21,6 +21,15 @@ namespace COP2210.Assignment8
         }
 
 
+        internal void Construction()
+        {
+            //1.  Call a method to get start date (year, day, month)
+            //2.  Call a method to get estimated Completion Date.
+            //3.  Check dates to make sure start date is before completion date.  (re-ask if there are issues)
+            //4.  Call GetHalfwayDate to find the date halfway.
+            //5.  Log the halfwaydate in the Construction Method
+        }
+
         private int GetYear()
         {
             int Year = 0;
@@ -40,5 +49,7 @@ namespace COP2210.Assignment8
 
             return Year;
         }
+
+
     }
 }
