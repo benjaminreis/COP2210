@@ -48,10 +48,16 @@ namespace COP2210.Assignment8
         {
             var dayOfMonth = 1;
             var IsElectionDay = false;
+            var MondayPassed = false;
             while (!IsElectionDay)
             {
                 var tempDate = new Date(11, dayOfMonth, year);
-                if (tempDate.getDayOfWeek() != "Tuesday")
+                if (tempDate.getDayOfWeek() == "Monday")
+                {
+                    MondayPassed = true;
+                }
+
+                if ((tempDate.getDayOfWeek() != "Tuesday") || MondayPassed == false)
                 {
                     dayOfMonth++;
 
