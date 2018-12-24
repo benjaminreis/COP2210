@@ -34,15 +34,7 @@ namespace COP2210.Assignment8
             var HalfwayDate = speedDater.getHalfwayDate(StartDate, EndDate);
 
 
-            Console.Write($"The Halway Date is:  {HalfwayDate.getMonth()}/{HalfwayDate.getDay()}/{HalfwayDate.getYear()}");
-
-
-
-            //1.  Call a method to get start date (year, day, month)
-            //2.  Call a method to get estimated Completion Date.
-            //3.  Check dates to make sure start date is before completion date.  (re-ask if there are issues)
-            //4.  Call GetHalfwayDate to find the date halfway.
-            //5.  Log the halfwaydate in the Construction Method
+            Console.Write($"The Halfway Date is:  {HalfwayDate.getMonth()}/{HalfwayDate.getDay()}/{HalfwayDate.getYear()}");
         }
 
 
@@ -106,9 +98,9 @@ namespace COP2210.Assignment8
             {
                 Console.WriteLine($"Enter a Day:  (in form of a number 1, 2, .. 30");
 
-                string sYear = Console.ReadLine();
+                string sDay = Console.ReadLine();
 
-                if (!int.TryParse(sYear, out nDay))
+                if (!int.TryParse(sDay, out nDay))
                 {
                     Console.WriteLine("Check your format, enter an integer;  1, 2, 3, 5, 8, etc..");
                 }
