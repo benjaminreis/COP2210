@@ -16,7 +16,7 @@ namespace COP2210.Assignment8
 
             var ElectionDate = speedDater.pollDancer(GetYear());
 
-            Console.Write($"Election day for {ElectionDate.getYear()} is day: {ElectionDate.getDay()} of the month:  {ElectionDate.getMonth()}");
+            Console.Write($"\nElection day for {ElectionDate.getYear()} is day: {ElectionDate.getDay()} of the month:  {ElectionDate.getMonth()}");
 
 
             Construction();
@@ -33,8 +33,8 @@ namespace COP2210.Assignment8
 
             var HalfwayDate = speedDater.getHalfwayDate(StartDate, EndDate);
 
-
-            Console.Write($"The Halfway Date is:  {HalfwayDate.getMonth()}/{HalfwayDate.getDay()}/{HalfwayDate.getYear()}");
+            Console.Write("\nWelcome to Construction! Where we take two dates and find the halfway point between them");
+            Console.Write($"\nThe Halfway Date is:  {HalfwayDate.getMonth()}/{HalfwayDate.getDay()}/{HalfwayDate.getYear()}");
         }
 
 
