@@ -9,7 +9,7 @@ namespace COP2210.Assignment8
      * @author Greg
      * Copyright:  Greg Shaw, October 15, 2010
      */
-    public class Date
+    internal class Date
     {
         // instance var's
         private int day;        // 1..number of days in the month
