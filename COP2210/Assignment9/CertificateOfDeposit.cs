@@ -15,6 +15,11 @@ namespace COP2210.Assignment9
 
 
 
-
+        internal decimal ComputeAccumulatedValue(int Year)
+        {
+            //TODO BEN write method to Compute value of loan through a given year from now.  
+            //this will computer principal plus accumulated interest
+            return 0.0M;
+        }
     }
 }
