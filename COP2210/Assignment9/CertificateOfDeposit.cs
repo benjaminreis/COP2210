@@ -3,17 +3,21 @@ namespace COP2210.Assignment9
 {
     internal class CertificateOfDeposit
     {
-        internal CertificateOfDeposit()
+        internal CertificateOfDeposit(decimal Principal, decimal InterestRate, int Maturity, CompoundingMode CompoundingFrequency)
         {
+            this._Principal = Principal;
+            this._InterestRate = InterestRate;
+            this._Maturity = Maturity;
+            this._CompoundingFrequency = CompoundingFrequency;
         }
 
 
-        private decimal Principal;
-        private decimal InterestRate;
-        private int Maturity;
-        private CompoundingMode CompoundingFrequency;  //times compounding per year.  Quartery = 4
+        private decimal _Principal;
+        private decimal _InterestRate;
+        private int _Maturity;
+        private CompoundingMode _CompoundingFrequency;  //times compounding per year.  Quartery = 4
 
-        enum CompoundingMode : int { Quarterly = 4, Monthly = 12, Daily = 365 };
+        internal enum CompoundingMode : int { Quarterly = 4, Monthly = 12, Daily = 365 };
 
 
         internal decimal ComputeAccumulatedValue(int Year)
